@@ -1,1 +1,5 @@
-# mini_blog
+<<<<<<< HEAD
+=======
+Project 
+CREAT AN .INIT.PHP FILE WITH THE INFORMATION FOR ACCESS TO YOUR DATABASE
+>>>>>>> origin/master
