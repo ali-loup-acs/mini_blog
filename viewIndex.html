@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="miniblog, acs, alij, kevinn, php, html, sql">
+    <meta name="description" content="Projet de miniblog de l'ACS par Ali et Kevin">
+    <meta name="author" content="AliJ KevinN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/styleindex.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        bkLib.onDomLoaded(nicEditors.allTextAreas);
+    </script>
+
+
+    <title>Mini Blog</title>
+</head>
+
+<body class="container-fluid">
+    <header>
+        <nav class="nav navbar">
+            <ul class="nav navbar">
+                <li class="col-md-2"><i class="fa fa-rebel fa-5x" aria-hidden="true"></i></li>
+                <li class="col-md-8"><a href="index.php"><h2>Mini Blog d'Ali & Kev</h2></a></li>
+                <li class="col-md-2 creer"><a href="dashboard.html">+ Créer</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="filtre col-md-2">
+        <form action="control.php" method="post">
+            <fieldset>
+                <h3>Catégories</h3>
+                <nav>
+                    {{# categorie}}
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="cat[]" value="{{id}}">{{categorie}}</input>
+                        </li>
+                    </ul>
+                    {{/ categorie}}
+
+                </nav>
+                <h3>Auteurs</h3> {{# auteurs}}
+
+                <nav>
+
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="auteur[]" value="{{id}}"> {{nom}} {{prenom}}
+                        </li>
+                    </ul>
+                </nav>
+                {{/ auteurs}}
+            </fieldset>
+            <button type="submit">Filter</button><button type="reset">Reset</button>
+
+        </form>
+    </aside>
+
+
+    <section class="col-md-10">
+        {{# data }}
+        <article class="col-md-10">
+            <h2>{{titre}}</h2>
+            <p class="signature col-md-12">{{categorie}}, {{nom}} {{prenom}} : {{date_publication}}</p>
+            <p class="col-md-12 message">{{message}}</p>
+            <!-- Trigger the modal with a button -->
+            <div class="boutonmodal row">
+                <button type="button" class="btn btn-info col-md-offset-5 col-md-2" data-toggle="modal" data-target="#myModal">Read more</button>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog col-md-12">
+                    <!-- Modal content-->
+                    <div class="modal-content modal-lg col-md-offset-2 col-md-12">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">{{titre}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                {{message}}
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        {{/ data }}
+
+    </section>
+
+
+</body>
+
+</html>

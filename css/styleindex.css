@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding:0;
+  font-style: Verdana;
+}
+
+body {  box-sizing: border-box;}
+nav ul li{list-style: none;}
+header{border-bottom: 1px solid black;margin-top:1%;}
+header nav i{  color:#23527C;}
+header nav a:hover{  text-decoration: none;}
+.creer{  margin-top: 1%;font-size: 2em;}
+header h2{font-size: 3em;}
+
+
+
+
+aside nav ul {
+  list-style: none;
+  overflow: auto;
+  height:10vh;
+}
+aside h3{
+  padding:3px;
+  border-bottom: 1px solid black;
+}
+
+section{border-left: 3px solid black;}
+section article{background-color:#CCCCCC; border-bottom: 1px dashed black; padding-bottom:5%; margin:2%;}
+.message{
+height:10vh;
+white-space:normal;
+overflow:hidden;
+text-overflow:ellipsis;
+margin-bottom: 4%;
+}
+.signature {
+  text-align: center;
+  margin-bottom: 5%;
+}
+section article { margin-bottom:10%;}
+section article h2{ text-align: center;}
+.boutonmodal{margin-top:10%;}

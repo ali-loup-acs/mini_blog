@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding:0;
+  font-style: Verdana;
+}
+
+body {
+  border-left:30px solid black;
+  box-sizing: border-box;
+}
+
+header{ margin-top:1%;}
+header nav i{  color:#23527C;}
+header nav a:hover{  text-decoration: none;}
+.titre {margin-top: 3%;}
+
+form{
+  margin-top:3%;
+}
